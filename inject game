@@ -1,10 +1,24 @@
+game = {}
+function game:HttpGet(url)
+    -- cmd指令
+    local cmd = "curl -s " .. url
+
+    local handle = io.popen(cmd)
+    local response = handle:read("*a")
+    handle:close()
+
+    return response
+end
+
 function InjectGame()
     local gameName = "MiniGameApp.exe"
     local processID = getProcessIDFromProcessName(gameName)
     if processID ~= nil then
-        showMessage("游戏已经注入")
+        showMessage("已注入遊戲")
+        load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/create%20function"))()
+        load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/z-ware"))()
     else
-        showMessage("请先启动游戏，并确保游戏进程名为 MiniGameApp.exe")
+        showMessage("未檢測到遊戲")
     end
     form.close()
 end
