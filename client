@@ -9,8 +9,6 @@ function game:HttpGet(url)
 
     return response
 end
-load(game:HttpGet("https://raw.githubusercontent.com/ZuoCi1/cheat-engine/main/cloub"))()
-
 local client = {
     "DESKTOP-E8IELO5",
 }
@@ -32,6 +30,7 @@ for _, v in ipairs(client) do
 end
 if is_client then
     showMessage("檢測到用戶")
+    load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/inject%20game"))()
 else
     showMessage("你不是用戶")
 end
