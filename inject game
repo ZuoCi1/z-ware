@@ -1,29 +1,26 @@
 function InjectGame()
-    local game = "MiniGameApp.exe"
-    local processID = getProcessIDFromProcessName(game)
+    local gameName = "MiniGameApp.exe"
+    local processID = getProcessIDFromProcessName(gameName)
     if processID ~= nil then
-        openProcess(game)
-        showMessage("已注入遊戲")
+        showMessage("游戏已经注入")
     else
-        showMessage("error：未檢測到進程遊戲")
+        showMessage("请先启动游戏，并确保游戏进程名为 MiniGameApp.exe")
     end
+    form.close()
 end
 
--- 创建主窗口
 local form = createForm(true)
 form.Caption = "注入遊戲"
 form.Width = 300
 form.Height = 150
 form.Position = poScreenCenter
 
--- 创建按钮
 local injectButton = createButton(form)
-injectButton.Caption = "注入游戏"
+injectButton.Caption = "注入遊戲"
 injectButton.Width = 240
 injectButton.Height = 100
 injectButton.Left = (form.Width - injectButton.Width) / 2
 injectButton.Top = (form.Height - injectButton.Height) / 2
 injectButton.OnClick = InjectGame
 
--- 显示窗口
 form.show()
