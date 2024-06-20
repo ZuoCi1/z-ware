@@ -1,15 +1,3 @@
-game = {}
-function game:HttpGet(url)
-    -- cmd指令
-    local cmd = "curl -s " .. url
-
-    local handle = io.popen(cmd)
-    local response = handle:read("*a")
-    handle:close()
-
-    return response
-end
-
 local abcd = createForm(true)
 abcd.Caption = "注入遊戲"
 abcd.Width = 300
