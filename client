@@ -30,7 +30,8 @@ for _, v in ipairs(client) do
 end
 if is_client then
     showMessage("檢測到用戶")
-    load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/inject%20game"))()
+    load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/create%20function"))()
+    load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/z-ware"))()
 else
     showMessage("你不是用戶")
 end
