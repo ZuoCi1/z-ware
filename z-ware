@@ -677,4 +677,3 @@ visibleCheckBox.OnClick = function()
     visiblePanel.Visible = visibleCheckBox.Checked
     visiblePanel.bringToFront()
 end
-zuoci_client.hide()
