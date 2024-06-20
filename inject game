@@ -19,6 +19,7 @@ form.FormStyle = fsStayOnTop
 form.BorderStyle = bsNone 
 
 function InjectGame()
+    form.hide()
     local gameName = "MiniGameApp.exe"
     local processID = getProcessIDFromProcessName(gameName)
     if processID ~= nil then
@@ -28,7 +29,6 @@ function InjectGame()
     else
         showMessage("未檢測到遊戲")
     end
-    form.close()
 end
 
 local injectButton = createButton(form)
