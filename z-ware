@@ -1,3 +1,48 @@
+game = {}
+function game:HttpGet(url)
+    -- cmd指令
+    local cmd = "curl -s " .. url
+
+    local handle = io.popen(cmd)
+    local response = handle:read("*a")
+    handle:close()
+
+    return response
+end
+
+local abcd = createForm(true)
+abcd.Caption = "注入遊戲"
+abcd.Width = 300
+abcd.Height = 150
+abcd.Position = poScreenCenter
+abcd.FormStyle = fsStayOnTop
+abcd.BorderStyle = bsNone 
+abcd.show()
+
+function aaaabbb()
+    local gameName = "MiniGameApp.exe"
+    local processID = getProcessIDFromProcessName(gameName)
+    if processID ~= nil then
+        showMessage("已注入遊戲")
+        load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/create%20function"))()
+    else
+        showMessage("未檢測到遊戲")
+    end
+end
+
+local abcdaaa = createButton(form)
+abcdaaa.Caption = "注入遊戲"
+abcdaaa.Width = 240
+abcdaaa.Height = 100
+abcdaaa.Left = (form.Width - injectButton.Width) / 2
+abcdaaa.Top = (form.Height - injectButton.Height) / 2
+abcdaaa.OnClick = function()
+    abcd.hide()
+    aaaabbb()
+    zuoci_client.show()
+end
+
+
 function AutoUid(number)
     local uid = tostring(number)
     if #uid >= 10 then
@@ -21,16 +66,6 @@ runspeed = getAddressList().getMemoryRecordByDescription("ac奔跑速度ac")
 swimspeed = getAddressList().getMemoryRecordByDescription("ad游泳速度ad")
 objidblack = getAddressList().getMemoryRecordByDescription("生物變暗")
 
-function InjectToggle()
-    local gameName = "MiniGameApp.exe"
-    local processID = getProcessIDFromProcessName(gameName)
-    if processID == nil then
-        return nil
-    else
-        return processID
-    end
-end
-
 -- 注入游戏函数
 function InjectGame()
     local game = "MiniGameApp.exe"
@@ -40,6 +75,16 @@ function InjectGame()
         showMessage("已注入遊戲")
     else
         showMessage("error：未檢測到進程遊戲")
+    end
+end
+
+function InjectToggle()
+    local gameName = "MiniGameApp.exe"
+    local processID = getProcessIDFromProcessName(gameName)
+    if processID == nil then
+        return nil
+    else
+        return processID
     end
 end
 
@@ -638,6 +683,4 @@ visibleCheckBox.OnClick = function()
     visiblePanel.Visible = visibleCheckBox.Checked
     visiblePanel.bringToFront()
 end
-
--- 顯示表單
-zuoci_client.show()
+zuoci_client.hide()
