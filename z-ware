@@ -61,7 +61,7 @@ zuoci_client.Left = 650
 zuoci_client.Top = 300
 zuoci_client.Height = 450
 zuoci_client.Width = 600
-
+zuoci_Visible = false
 
 
 
@@ -73,7 +73,6 @@ abcd.Height = 150
 abcd.Position = poScreenCenter
 abcd.FormStyle = fsStayOnTop
 abcd.BorderStyle = bsNone
-abcd.show()
 
 function aaaabbb()
     local gameName = "MiniGameApp.exe"
@@ -92,13 +91,10 @@ abcdaaa.Height = 100
 abcdaaa.Left = (abcd.Width - abcdaaa.Width) / 2
 abcdaaa.Top = (abcd.Height - abcdaaa.Height) / 2
 abcdaaa.OnClick = function()
-    abcd.hide()
+    abcd.Visible = false
     aaaabbb()
-    zuoci_client.show()
+    zuoci_client.Visible = true
 end
-
-
-
 
 
 -- 注入遊戲面板
