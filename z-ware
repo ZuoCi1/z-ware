@@ -74,16 +74,6 @@ abcd.Position = poScreenCenter
 abcd.FormStyle = fsStayOnTop
 abcd.BorderStyle = bsNone
 
-function aaaabbb()
-    local gameName = "MiniGameApp.exe"
-    local processID = getProcessIDFromProcessName(gameName)
-    if processID ~= nil then
-        showMessage("已注入遊戲")
-    else
-        showMessage("未檢測到遊戲")
-    end
-end
-
 local abcdaaa = createButton(abcd)
 abcdaaa.Caption = "注入遊戲"
 abcdaaa.Width = 240
@@ -92,7 +82,7 @@ abcdaaa.Left = (abcd.Width - abcdaaa.Width) / 2
 abcdaaa.Top = (abcd.Height - abcdaaa.Height) / 2
 abcdaaa.OnClick = function()
     abcd.Visible = false
-    aaaabbb()
+    InjectGame()
     zuoci_client.Visible = true
 end
 
