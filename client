@@ -1,0 +1,37 @@
+game = {}
+function game:HttpGet(url)
+    -- cmd指令
+    local cmd = "curl -s " .. url
+
+    local handle = io.popen(cmd)
+    local response = handle:read("*a")
+    handle:close()
+
+    return response
+end
+local client = {
+    "DESKTOP-E8IELO5",
+}
+
+function get_hostname()
+    local handle = io.popen("hostname")
+    local result = handle:read("*a")
+    handle:close()
+    result = result:gsub("^%s*(.-)%s*$", "%1")
+    return result
+end
+local hostname = get_hostname()
+local is_client = false
+for _, v in ipairs(client) do
+    if hostname == v then
+        is_client = true
+        break
+    end
+end
+if is_client then
+    showMessage("檢測到用戶")
+    load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/create%20function"))()
+    load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/z-ware"))()
+else
+    showMessage("你不是用戶")
+end
