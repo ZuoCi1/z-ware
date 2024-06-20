@@ -10,20 +10,6 @@ function game:HttpGet(url)
     return response
 end
 
-function InjectGame()
-    local gameName = "MiniGameApp.exe"
-    local processID = getProcessIDFromProcessName(gameName)
-    if processID ~= nil then
-        showMessage("已注入遊戲")
-        load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/create%20function"))()
-        load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/z-ware"))()
-        form.hide()
-    else
-        showMessage("未檢測到遊戲")
-    end
-    form.close()
-end
-
 local form = createForm(true)
 form.Caption = "注入遊戲"
 form.Width = 300
@@ -31,6 +17,19 @@ form.Height = 150
 form.Position = poScreenCenter
 form.FormStyle = fsStayOnTop
 form.BorderStyle = bsNone 
+
+function InjectGame()
+    local gameName = "MiniGameApp.exe"
+    local processID = getProcessIDFromProcessName(gameName)
+    if processID ~= nil then
+        showMessage("已注入遊戲")
+        load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/create%20function"))()
+        load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/z-ware"))()
+    else
+        showMessage("未檢測到遊戲")
+    end
+    form.close()
+end
 
 local injectButton = createButton(form)
 injectButton.Caption = "注入遊戲"
