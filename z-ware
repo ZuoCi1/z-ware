@@ -61,7 +61,7 @@ zuoci_client.Left = 650
 zuoci_client.Top = 300
 zuoci_client.Height = 450
 zuoci_client.Width = 600
-zuoci_Visible = false
+zuoci_client.Visible = false
 
 
 
