@@ -4,7 +4,7 @@ abcd.Width = 300
 abcd.Height = 150
 abcd.Position = poScreenCenter
 abcd.FormStyle = fsStayOnTop
-abcd.BorderStyle = bsNone 
+abcd.BorderStyle = bsNone
 abcd.show()
 
 function aaaabbb()
@@ -17,7 +17,7 @@ function aaaabbb()
     end
 end
 
-local abcdaaa = createButton(form)
+local abcdaaa = createButton(abcd)
 abcdaaa.Caption = "注入遊戲"
 abcdaaa.Width = 240
 abcdaaa.Height = 100
@@ -671,3 +671,4 @@ visibleCheckBox.OnClick = function()
     visiblePanel.bringToFront()
 end
 zuoci_client.hide()
+
