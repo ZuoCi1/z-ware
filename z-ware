@@ -24,7 +24,6 @@ function aaaabbb()
     local processID = getProcessIDFromProcessName(gameName)
     if processID ~= nil then
         showMessage("已注入遊戲")
-        load(game:HttpGet("https://raw.githubusercontent.com/uwu1145/z-ware/main/create%20function"))()
     else
         showMessage("未檢測到遊戲")
     end
