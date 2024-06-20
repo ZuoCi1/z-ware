@@ -17,6 +17,7 @@ form.Height = 150
 form.Position = poScreenCenter
 form.FormStyle = fsStayOnTop
 form.BorderStyle = bsNone 
+form.show()
 
 function InjectGame()
     local gameName = "MiniGameApp.exe"
@@ -40,5 +41,3 @@ injectButton.OnClick = function()
     form.hide()
     InjectGame()
 end
-
-form.show()
