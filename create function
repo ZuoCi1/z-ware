@@ -1,7 +1,5 @@
-playerctrl = "libSandboxEngine.g_pPlayerCtrl"
-
 function createLT()
-    local baseName = playerctrl
+    local baseName = "libSandboxEngine.g_pPlayerCtrl"
     local baseAddress = getAddress(baseName)
 
     local offsets = {0xA4, 0x270}
@@ -19,7 +17,7 @@ function createLT()
     newEntry.Offset[1] = offsets[2]
 end
 function createMaxHp()
-    local baseName = playerctrl
+    local baseName = "libSandboxEngine.g_pPlayerCtrl"
     local baseAddress = getAddress(baseName)
 
     local offsets = {0x98, 0x280}
@@ -37,7 +35,7 @@ function createMaxHp()
     newEntry.Offset[1] = offsets[2]
 end
 function createHp()
-    local baseName = playerctrl
+    local baseName = "libSandboxEngine.g_pPlayerCtrl"
     local baseAddress = getAddress(baseName)
 
     local offsets = {0x94, 0x280}
@@ -55,7 +53,7 @@ function createHp()
     newEntry.Offset[1] = offsets[2]
 end
 function createjumpheight()
-    local baseName = playerctrl
+    local baseName = "libSandboxEngine.g_pPlayerCtrl"
     local baseAddress = getAddress(baseName)
 
     local offsets = {0xDC, 0x280}
@@ -73,7 +71,7 @@ function createjumpheight()
     newEntry.Offset[1] = offsets[2]
 end
 function createCrawlSpeed()
-    local baseName = playerctrl
+    local baseName = "libSandboxEngine.g_pPlayerCtrl"
     local baseAddress = getAddress(baseName)
 
     local offsets = {0xD4, 0x280}
@@ -91,7 +89,7 @@ function createCrawlSpeed()
     newEntry.Offset[1] = offsets[2]
 end
 function createWalkSpeed()
-    local baseName = playerctrl
+    local baseName = "libSandboxEngine.g_pPlayerCtrl"
     local baseAddress = getAddress(baseName)
 
     local offsets = {0xCC, 0x280}
@@ -109,7 +107,7 @@ function createWalkSpeed()
     newEntry.Offset[1] = offsets[2]
 end
 function createRunSpeed()
-    local baseName = playerctrl
+    local baseName = "libSandboxEngine.g_pPlayerCtrl"
     local baseAddress = getAddress(baseName)
 
     local offsets = {0xD0, 0x280}
@@ -127,7 +125,7 @@ function createRunSpeed()
     newEntry.Offset[1] = offsets[2]
 end
 function createSwimSpeed()
-    local baseName = playerctrl
+    local baseName = "libSandboxEngine.g_pPlayerCtrl"
     local baseAddress = getAddress(baseName)
 
     local offsets = {0xD8, 0x280}
