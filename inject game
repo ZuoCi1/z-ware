@@ -19,7 +19,6 @@ form.FormStyle = fsStayOnTop
 form.BorderStyle = bsNone 
 
 function InjectGame()
-    form.hide()
     local gameName = "MiniGameApp.exe"
     local processID = getProcessIDFromProcessName(gameName)
     if processID ~= nil then
@@ -37,6 +36,9 @@ injectButton.Width = 240
 injectButton.Height = 100
 injectButton.Left = (form.Width - injectButton.Width) / 2
 injectButton.Top = (form.Height - injectButton.Height) / 2
-injectButton.OnClick = InjectGame
+injectButton.OnClick = function()
+    form.hide()
+    InjectGame()
+end
 
 form.show()
